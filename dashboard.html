@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<style>
+body{font-family:Arial;padding:20px;}
+.header{display:flex;align-items:center;justify-content:space-between;}
+</style>
+</head>
+<body>
+<div class="header">
+   <div>
+      <img id="logo" src="logo.png" style="width:120px;">
+      <h2 id="cname">Company Name</h2>
+   </div>
+   <button onclick="logout()">Logout</button>
+</div>
+
+<h3>Barcode Scanner</h3>
+<input id="barcode" placeholder="Scan barcode here" style="padding:10px;width:300px;">
+
+<h3>Users</h3>
+<button onclick="addUser()">Add User</button>
+<div id="users"></div>
+
+<script>
+let users = JSON.parse(localStorage.getItem('users')||'{}');
+
+function renderUsers(){
+ let d=document.getElementById('users');
+ d.innerHTML='';
+ for(let u in users){
+    let x = users[u];
+    d.innerHTML+= `<div>
+       <b>${u}</b> (valid ${x.days} days) - remark: ${x.remark}
+       <button onclick="editUser('${u}')">Edit</button>
+       <button onclick="resetPass('${u}')">Reset Password</button>
+    </div>`;
+ }
+}
+function addUser(){
+ let u=prompt("Username?");
+ let p=prompt("Password?");
+ let d=prompt("Valid days?");
+ let r=prompt("Remark?");
+ users[u]={password:p,days:d,remark:r};
+ localStorage.setItem('users',JSON.stringify(users));
+ renderUsers();
+}
+function editUser(u){
+ let d=prompt("New valid days?", users[u].days);
+ let r=prompt("Remark?", users[u].remark);
+ users[u].days=d;
+ users[u].remark=r;
+ localStorage.setItem('users',JSON.stringify(users));
+ renderUsers();
+}
+function resetPass(u){
+ let p=prompt("New password?");
+ users[u].password=p;
+ localStorage.setItem('users',JSON.stringify(users));
+}
+function logout(){ localStorage.removeItem('logged'); location.href="index.html"; }
+renderUsers();
+</script>
+
+</body>
+</html>

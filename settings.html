@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Settings (v6)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="dashboard.html">Company</a></div>
+  <div class="user-area"><span id="loggedUser"></span><button id="btnLogout" class="btn small">Logout</button></div>
+</header>
+<div class="layout">
+  <nav class="sidebar">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="add_product.html">Add Product</a></li>
+      <li><a href="settings.html" class="active">Settings</a></li>
+      <li><a href="admin_users.html">Admin - Users</a></li>
+    </ul>
+  </nav>
+  <main class="main">
+    <h2>Settings</h2>
+    <div class="card">
+      <label>Company Name</label>
+      <input id="companyNameInput" />
+      <label>Upload Logo (PNG/JPG)</label>
+      <input id="logoUpload" type="file" accept="image/*" />
+      <label>Header Font Size</label>
+      <input id="headerFontSize" type="number" value="18" />
+      <label>Header Color</label>
+      <input id="headerColor" type="color" value="#0b5ed7" />
+      <div style="margin-top:8px;">
+        <label><input type="checkbox" id="onlyAdminCompany"/> Only admin can change company info</label>
+      </div>
+      <div style="margin-top:8px;">
+        <button id="btnSaveSettings" class="btn">Save Settings</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4>Department WhatsApp Numbers & Auto Alerts</h4>
+      <div id="deptWaList"></div>
+    </div>
+
+    <div class="card">
+      <h4>Permissions</h4>
+      <label><input type="checkbox" id="permAdd" /> Allow add product</label><br/>
+      <label><input type="checkbox" id="permEdit" /> Allow edit product</label><br/>
+      <label><input type="checkbox" id="permDownload" /> Allow downloads</label>
+      <div style="margin-top:8px;">
+        <button id="btnSavePerm" class="btn">Save Permissions</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

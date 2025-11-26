@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Admin Users (v6)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="dashboard.html">Company</a></div>
+  <div class="user-area"><span id="loggedUser"></span><button id="btnLogout" class="btn small">Logout</button></div>
+</header>
+<div class="layout">
+  <nav class="sidebar">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="add_product.html">Add Product</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="admin_users.html" class="active">Admin - Users</a></li>
+    </ul>
+  </nav>
+  <main class="main">
+    <h2>Users (Admin)</h2>
+    <div class="card">
+      <label>Email</label>
+      <input id="newUserEmail" />
+      <label>Password</label>
+      <input id="newUserPass" />
+      <label>Role</label>
+      <select id="newUserRole"><option value="user">User</option><option value="admin">Admin</option></select>
+      <div class="form-row">
+        <button id="btnCreateUser" class="btn">Create User</button>
+      </div>
+    </div>
+    <div class="card">
+      <h4>Existing Users</h4>
+      <div id="usersList"></div>
+    </div>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
