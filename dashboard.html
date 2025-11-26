@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Inventory - Dashboard (v6)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img id="companyLogoSmall" src="" alt="" style="height:32px;display:none;margin-right:8px;vertical-align:middle"><span id="companyName">Company</span></div>
+  <div class="user-area"><span id="loggedUser"></span><button id="btnLogout" class="btn small">Logout</button></div>
+</header>
+<div class="layout">
+  <nav class="sidebar">
+    <ul>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="add_product.html">Add Product</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="admin_users.html">Admin - Users</a></li>
+    </ul>
+  </nav>
+  <main class="main">
+    <div class="top-actions">
+      <div>
+        <button id="btnExportAllExcel" class="btn">Export Excel</button>
+        <button id="btnExportAllPDF" class="btn">Export PDF</button>
+      </div>
+      <div>
+        <button id="btnRunDeptAlerts" class="btn">Run Dept WhatsApp Alerts</button>
+      </div>
+    </div>
+    <h2>Dashboard</h2>
+    <div id="cards" class="grid"></div>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

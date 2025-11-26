@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Add Product (v6)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a href="dashboard.html">Company</a></div>
+  <div class="user-area"><span id="loggedUser"></span><button id="btnLogout" class="btn small">Logout</button></div>
+</header>
+<div class="layout">
+  <nav class="sidebar">
+    <ul>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="add_product.html" class="active">Add Product</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="admin_users.html">Admin - Users</a></li>
+    </ul>
+  </nav>
+  <main class="main">
+    <h2>Add / Edit Product</h2>
+    <form id="productForm" class="form">
+      <label>Department</label>
+      <select id="dept"></select>
+      <label>Product Name</label>
+      <input id="productName" required />
+      <label>Quantity</label>
+      <input id="qty" type="number" min="0" value="1" />
+      <label>Unit</label>
+      <input id="unit" value="pcs" />
+      <label>MFG Date</label>
+      <input id="mfg" type="date" />
+      <label>Best before (months)</label>
+      <input id="bestBefore" type="number" min="0" value="6" />
+      <label>Remark</label>
+      <input id="remark" />
+      <input type="hidden" id="editingId" />
+      <div class="form-row">
+        <button class="btn" id="btnSave">Save</button>
+        <button class="btn secondary" id="btnClear" type="button">Clear</button>
+      </div>
+    </form>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Inventory - Login (v6)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="center-screen">
+  <div class="card login-card">
+    <img id="loginLogo" src="" alt="" style="max-height:80px;display:none;margin-bottom:8px">
+    <h2 id="loginTitle">Inventory System</h2>
+    <select id="companySelect" aria-label="Company select" style="display:none"></select>
+    <input id="email" placeholder="Email / Username" />
+    <input id="password" type="password" placeholder="Password" />
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button id="btnLogin" class="btn">Login</button>
+      <button id="btnSignup" class="btn secondary">Sign up</button>
+    </div>
+    <p id="msg" class="msg"></p>
+    <p class="hint">Demo admin: <strong>admin</strong> / <strong>admin1234@</strong></p>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
