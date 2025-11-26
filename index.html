@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Advanced Dashboard</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css'>
+<style>
+body { margin:0; font-family: Arial; background:#eef1f5; }
+.sidebar {
+  width:240px; background:#1f2937; color:white; height:100vh; position:fixed; top:0; left:0;
+  padding-top:20px; box-shadow:2px 0 8px rgba(0,0,0,0.3);
+}
+.sidebar h2 { text-align:center; margin-bottom:20px; font-size:20px; }
+.sidebar a {
+  display:block; padding:14px 20px; color:white; text-decoration:none; font-size:15px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.sidebar a:hover { background:#374151; }
+
+.header { margin-left:240px; background:white; padding:15px 25px; display:flex;
+  justify-content:space-between; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+.header img { height:var(--logo-size, 60px); }
+.header input[type=range] { width:120px; }
+
+.content { margin-left:240px; padding:25px; }
+
+.card {
+  background:white; padding:20px; margin-bottom:20px; border-radius:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn { padding:10px 15px; border:none; border-radius:8px; cursor:pointer; }
+.btn-primary { background:#2563eb; color:white; }
+.btn-danger { background:#dc2626; color:white; }
+</style>
+</head>
+<body>
+
+<div class='sidebar'>
+  <h2 id='companyName'>Company Name</h2>
+  <a href="#"><i class="fa fa-chart-line"></i> Dashboard</a>
+  <a href="#"><i class="fa fa-box"></i> Products</a>
+  <a href="#"><i class="fa fa-plus"></i> Add Product</a>
+  <a href="#"><i class="fa fa-users"></i> Users</a>
+  <a href="#"><i class="fa fa-gear"></i> Settings</a>
+  <a href="#" style='background:#dc2626'><i class="fa fa-sign-out"></i> Logout</a>
+</div>
+
+<div class='header'>
+  <img id='logo' src='logo.png'>
+  <div>
+    <label>Logo Size</label>
+    <input type='range' min='40' max='150' value='60' oninput='changeLogoSize(this.value)'>
+  </div>
+</div>
+
+<div class='content'>
+  <div class='card'>
+    <h3>Barcode Scanner</h3>
+    <input type='text' id='barcode' class='input' placeholder='Scan barcode...' style='padding:12px; width:100%; font-size:18px;'>
+  </div>
+
+  <div class='card'>
+    <h3>User Controls</h3>
+    <button class='btn btn-primary'>Add User</button>
+    <button class='btn btn-primary'>Edit User</button>
+    <button class='btn btn-danger'>Reset Password</button>
+  </div>
+</div>
+
+<script>
+function changeLogoSize(v){
+  document.documentElement.style.setProperty('--logo-size', v+'px');
+}
+</script>
+
+</body>
+</html>
